@@ -1,4 +1,4 @@
 {
   "presets": ["react-app"],
-  "plugins": []
+  "plugins": ["styled-components"]
 }
