@@ -1,12 +1,13 @@
 import Actions from "actions/counter";
 import { handleActions } from "redux-actions";
+import Counter from "models/Counter";
 
-const defaultState = { counter: 0 };
+const defaultState = new Counter();
 
 export default handleActions(
   {
-    [Actions.increment]: state => ({ ...state, counter: state.counter + 1 }),
-    [Actions.decrement]: state => ({ ...state, counter: state.counter - 1 })
+    [Actions.increment]: state => state.increment(),
+    [Actions.decrement]: state => state.decrement()
   },
   defaultState
 );

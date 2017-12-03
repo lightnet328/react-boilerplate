@@ -46,6 +46,8 @@ class Home extends Component {
 }
 
 export default connect(
-  state => state.counter,
+  state => ({
+    counter: state.counter.counter
+  }),
   dispatch => bindActionCreators(Actions, dispatch)
 )(Home);
