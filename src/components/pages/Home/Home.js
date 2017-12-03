@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 import styled from "styled-components";
 import Button from "components/atoms/Button";
+import Actions from "actions/counter";
 
 const Root = styled.div`
   width: 100vw;
@@ -29,17 +32,20 @@ const DecrementButton = styled(Button).attrs({
 
 class Home extends Component {
   render() {
-    const { ...ohter } = this.props;
+    const { counter, increment, decrement, ...ohter } = this.props;
     return (
-        <Count>0</Count>
       <Root {...ohter}>
+        <Count>{counter}</Count>
         <ButtonContainer>
-          <IncrementButton>+</IncrementButton>
-          <DecrementButton>-</DecrementButton>
+          <IncrementButton onClick={increment}>+</IncrementButton>
+          <DecrementButton onClick={decrement}>-</DecrementButton>
         </ButtonContainer>
       </Root>
     );
   }
 }
 
-export default Home;
+export default connect(
+  state => state.counter,
+  dispatch => bindActionCreators(Actions, dispatch)
+)(Home);
