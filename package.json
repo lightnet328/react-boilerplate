@@ -1,0 +1,7 @@
+{
+  "name": "react-boilerplate",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "author": "lightnet328 <lightnet328@gmail.com>",
+  "license": "MIT"
+}
