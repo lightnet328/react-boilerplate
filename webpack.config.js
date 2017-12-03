@@ -15,7 +15,15 @@ module.exports = {
       template: path.join(__dirname, "src", "index.html")
     })
   ],
-  module: {},
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"]
+      }
+    ]
+  },
   devtool: "inline-source-map",
   devServer: {
     contentBase: path.join(__dirname, "src")

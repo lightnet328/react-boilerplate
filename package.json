@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-    "dev": "webpack-dev-server",
-    "build": "webpack"
+    "dev": "NODE_ENV=development webpack-dev-server",
+    "build": "NODE_ENV=production webpack"
   },
   "author": "lightnet328 <lightnet328@gmail.com>",
   "license": "MIT",
@@ -13,6 +13,9 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-react-app": "^3.1.0",
     "html-webpack-plugin": "^2.30.1",
     "webpack": "^3.9.1",
     "webpack-dev-server": "^2.9.5"
