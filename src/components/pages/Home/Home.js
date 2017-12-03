@@ -29,9 +29,10 @@ const DecrementButton = styled(Button).attrs({
 
 class Home extends Component {
   render() {
+    const { ...ohter } = this.props;
     return (
-      <Root>
         <Count>0</Count>
+      <Root {...ohter}>
         <ButtonContainer>
           <IncrementButton>+</IncrementButton>
           <DecrementButton>-</DecrementButton>
