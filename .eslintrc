@@ -15,5 +15,10 @@
   "rules": {
     "prettier/prettier": "error"
   },
-  "plugins": ["jsx-a11y", "prettier"]
+  "plugins": ["jsx-a11y", "prettier"],
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  }
 }
