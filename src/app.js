@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import Home from "components/pages/Home";
 
 class App extends Component {
   render() {
-    return <span>Hello</span>;
+    return <Home />;
   }
 }
 
