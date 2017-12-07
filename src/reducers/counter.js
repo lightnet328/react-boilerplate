@@ -1,6 +1,6 @@
 // @flow
-import Actions from "actions/counter";
 import { handleActions } from "redux-actions";
+import Actions from "actions/counter";
 import Counter from "models/Counter";
 
 const defaultState = new Counter();
