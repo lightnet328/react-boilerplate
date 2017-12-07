@@ -1,3 +1,4 @@
+// @flow
 import { Record } from "immutable";
 
 class Counter extends Record({ counter: 0 }) {

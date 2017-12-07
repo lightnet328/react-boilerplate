@@ -1,11 +1,14 @@
+// @flow
 import React, { Component } from "react";
+import type { ComponentType } from "react";
 import { bindActionCreators } from "redux";
+import type { Dispatch } from "redux";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import Button from "components/atoms/Button";
 import Actions from "actions/counter";
 
-const Root = styled.div`
+const Root: ComponentType<{}> = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -14,23 +17,29 @@ const Root = styled.div`
   justify-content: center;
 `;
 
-const Count = styled.p``;
+const Count: ComponentType<{}> = styled.p``;
 
-const ButtonContainer = styled.div`
+const ButtonContainer: ComponentType<{}> = styled.div`
   & > *:not(:first-child) {
     margin-left: 32px;
   }
 `;
 
-const IncrementButton = styled(Button).attrs({
+const IncrementButton: ComponentType<{}> = styled(Button).attrs({
   background: "#F44336"
 })``;
 
-const DecrementButton = styled(Button).attrs({
+const DecrementButton: ComponentType<{}> = styled(Button).attrs({
   background: "#3F51B5"
 })``;
 
-class Home extends Component {
+type Props = {
+  counter: number,
+  increment: Function,
+  decrement: Function
+};
+
+class Home extends Component<Props> {
   render() {
     const { counter, increment, decrement, ...ohter } = this.props;
     return (
@@ -46,8 +55,8 @@ class Home extends Component {
 }
 
 export default connect(
-  state => ({
+  (state: Object) => ({
     counter: state.counter.counter
   }),
-  dispatch => bindActionCreators(Actions, dispatch)
+  (dispatch: Dispatch<any>) => bindActionCreators(Actions, dispatch)
 )(Home);

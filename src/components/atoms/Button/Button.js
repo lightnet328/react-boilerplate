@@ -1,8 +1,10 @@
+// @flow
 import React, { Component } from "react";
+import type { ComponentType } from "react";
 import styled from "styled-components";
 import chroma from "chroma-js";
 
-const Root = styled.button`
+const Root: ComponentType<Props> = styled.button`
   min-width: 64px;
   height: 32px;
   line-height: 32px;
@@ -24,7 +26,12 @@ const Root = styled.button`
   }
 `;
 
-class Button extends Component {
+type Props = {
+  color?: string,
+  background?: string
+};
+
+class Button extends Component<Props> {
   static defaultProps = {
     color: "#eeeeee",
     background: "#111111"

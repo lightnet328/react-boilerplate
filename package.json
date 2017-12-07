@@ -4,7 +4,8 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server",
-    "build": "NODE_ENV=production webpack"
+    "build": "NODE_ENV=production webpack",
+    "flow-coverage": "flow-coverage-report -i 'src/**/*.js'"
   },
   "author": "lightnet328 <lightnet328@gmail.com>",
   "license": "MIT",
@@ -34,6 +35,9 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-prettier": "^2.3.1",
     "eslint-plugin-react": "^7.5.1",
+    "flow-bin": "^0.60.1",
+    "flow-coverage-report": "^0.4.0",
+    "flow-typed": "^2.2.3",
     "html-webpack-plugin": "^2.30.1",
     "prettier": "^1.8.2",
     "webpack": "^3.9.1",

@@ -1,3 +1,4 @@
+// @flow
 import Actions from "actions/counter";
 import { handleActions } from "redux-actions";
 import Counter from "models/Counter";
