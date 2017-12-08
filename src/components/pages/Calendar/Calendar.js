@@ -12,6 +12,8 @@ import Actions from "actions/calendar";
 const Root: ComponentType<{}> = styled.div``;
 
 type Props = {
+  year: number,
+  month: number,
   nextMonth: Function,
   prevMonth: Function
 };
