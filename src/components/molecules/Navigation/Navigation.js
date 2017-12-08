@@ -25,6 +25,7 @@ class Navigation extends Component<{}> {
     return (
       <Root {...this.props}>
         <Link to="/">Home</Link>
+        <Link to="/calendar">Calendar</Link>
       </Root>
     );
   }
