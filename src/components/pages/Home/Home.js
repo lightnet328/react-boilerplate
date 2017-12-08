@@ -7,14 +7,7 @@ import { connect } from "react-redux";
 import styled, { keyframes } from "styled-components";
 import Logo from "assets/images/react-logo.svg";
 
-const Root: ComponentType<{}> = styled.div`
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
+const Root: ComponentType<{}> = styled.div``;
 
 const rotate360 = keyframes`
   from {

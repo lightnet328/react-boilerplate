@@ -9,14 +9,7 @@ import Button from "components/atoms/Button";
 import Calendar from "components/molecules/Calendar";
 import Actions from "actions/calendar";
 
-const Root: ComponentType<{}> = styled.div`
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
+const Root: ComponentType<{}> = styled.div``;
 
 type Props = {
   nextMonth: Function,
