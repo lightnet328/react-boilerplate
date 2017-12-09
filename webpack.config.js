@@ -1,6 +1,7 @@
 const path = require("path");
 const FlowStatusWebpackPlugin = require("flow-status-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   entry: path.join(__dirname, "src", "index.js"),
@@ -9,13 +10,16 @@ module.exports = {
     filename: "bundle.js"
   },
   resolve: {
-    extensions: [".js", ".jsx"]
+    extensions: [".js", ".jsx"],
+    modules: [path.join(__dirname, "src"), "node_modules"]
   },
   plugins: [
     new FlowStatusWebpackPlugin({ failOnError: true }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html")
-    })
+    }),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ],
   module: {
     rules: [
@@ -50,6 +54,7 @@ module.exports = {
   },
   devtool: "inline-source-map",
   devServer: {
-    contentBase: path.join(__dirname, "src")
+    contentBase: path.join(__dirname, "dist"),
+    hot: true
   }
 };

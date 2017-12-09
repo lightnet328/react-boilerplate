@@ -3,12 +3,13 @@ import React, { Component } from "react";
 import { Provider } from "react-redux";
 import { Route } from "react-router-dom";
 import { ConnectedRouter } from "react-router-redux";
-import store, { history } from "store";
 import styled from "styled-components";
 import Home from "components/pages/Home";
 import Counter from "components/pages/Counter";
 import Calendar from "components/pages/Calendar";
 import Navigation from "components/molecules/Navigation";
+import type { Store } from "types";
+import type { History } from "history";
 
 const Container = styled.div`
   width: 100vw;
@@ -33,8 +34,14 @@ const Content = styled.div`
   justify-content: center;
 `;
 
-class App extends Component<{}> {
+export type Props = {
+  store: Store,
+  history: History
+};
+
+class App extends Component<Props> {
   render() {
+    const { store, history } = this.props;
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>
