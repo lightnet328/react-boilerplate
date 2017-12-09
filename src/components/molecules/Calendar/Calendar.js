@@ -63,7 +63,10 @@ class Calendar extends Component<Props> {
     const weekStart = i => Math.max(1, firstSunday + (i - 1) * 7);
     const weekEnd = i => Math.min(firstSunday + i * 7, endDate + 1);
     const week = i => _.range(weekStart(i), weekEnd(i));
-    const calendar = _.range(weekCount).map(week);
+    const calendar = _.range(weekCount).map(i => ({
+      id: `${year}-${month}:${i}`,
+      week: week(i)
+    }));
     return (
       <Root {...other}>
         <Header>
@@ -72,8 +75,8 @@ class Calendar extends Component<Props> {
           <Button onClick={nextMonth}>&gt;</Button>
         </Header>
         <Content>
-          {calendar.map(week => (
-            <WeekCell key={week}>
+          {calendar.map(({ id, week }) => (
+            <WeekCell key={id}>
               {week.map(date => <DateCell key={date}>{date}</DateCell>)}
             </WeekCell>
           ))}
