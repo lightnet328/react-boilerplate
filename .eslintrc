@@ -2,6 +2,7 @@
   "parser": "babel-eslint",
   "extends": [
     "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
     "prettier",
@@ -15,7 +16,7 @@
   "rules": {
     "prettier/prettier": "error"
   },
-  "plugins": ["jsx-a11y", "prettier"],
+  "plugins": ["jsx-a11y", "react", "prettier"],
   "settings": {
     "import/resolver": {
       "babel-module": {}
