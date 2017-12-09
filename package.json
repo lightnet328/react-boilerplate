@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-    "dev": "NODE_ENV=development webpack-dev-server",
     "build": "NODE_ENV=production webpack",
+    "dev": "NODE_ENV=development webpack-dev-server",
     "flow-coverage": "flow-coverage-report -i 'src/**/*.js'"
   },
   "author": "lightnet328 <lightnet328@gmail.com>",
