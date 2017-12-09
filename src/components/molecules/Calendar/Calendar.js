@@ -61,10 +61,9 @@ class Calendar extends Component<Props> {
     const weekCount = Math.ceil((endDate + startDay) / 7);
     const weekStart = i => Math.max(1, firstSunday + (i - 1) * 7);
     const weekEnd = i => Math.min(firstSunday + i * 7, endDate + 1);
-    const week = i => _.range(weekStart(i), weekEnd(i));
     const calendar = _.range(weekCount).map(i => ({
       id: `${year}-${month}:${i}`,
-      week: week(i)
+      week: _.range(weekStart(i), weekEnd(i))
     }));
     return (
       <Root {...other}>

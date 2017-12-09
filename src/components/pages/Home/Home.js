@@ -1,10 +1,8 @@
 // @flow
 import React, { Component } from "react";
-import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import styled, { keyframes } from "styled-components";
 import Logo from "components/atoms/Logo";
-import type { State, Dispatch } from "types";
 
 const Root = styled.div``;
 

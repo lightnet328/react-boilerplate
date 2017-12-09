@@ -3,6 +3,11 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import chroma from "chroma-js";
 
+type Props = {
+  color?: string,
+  background?: string
+};
+
 const Root = styled.button`
   min-width: 64px;
   height: 32px;
@@ -24,11 +29,6 @@ const Root = styled.button`
         .hex()};
   }
 `;
-
-type Props = {
-  color?: string,
-  background?: string
-};
 
 class Button extends Component<Props> {
   static defaultProps = {

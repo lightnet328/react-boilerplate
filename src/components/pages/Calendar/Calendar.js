@@ -4,7 +4,6 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import type { Connector } from "react-redux";
 import styled from "styled-components";
-import Button from "components/atoms/Button";
 import Calendar from "components/molecules/Calendar";
 import Actions from "actions/calendar";
 import type { State, Dispatch } from "types";
