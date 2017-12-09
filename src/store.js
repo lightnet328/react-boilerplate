@@ -1,14 +1,16 @@
 // @flow
-import { createStore, combineReducers, applyMiddleware } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import createHistory from "history/createBrowserHistory";
+import type { History } from "history";
 import { routerMiddleware } from "react-router-redux";
 import reducers from "reducers";
+import type { Middleware, Store } from "types";
 
-const history = createHistory();
+const history: History = createHistory();
 
-const middleware = routerMiddleware(history);
+const middleware: Middleware = routerMiddleware(history);
 
-const store = createStore(reducers, applyMiddleware(middleware));
+const store: Store = createStore(reducers, applyMiddleware(middleware));
 
 export default store;
 

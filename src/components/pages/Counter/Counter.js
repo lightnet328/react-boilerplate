@@ -1,32 +1,31 @@
 // @flow
 import React, { Component } from "react";
-import type { ComponentType } from "react";
 import { bindActionCreators } from "redux";
-import type { Dispatch } from "redux";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import Button from "components/atoms/Button";
 import Actions from "actions/counter";
+import type { State, Dispatch } from "types";
 
-const Root: ComponentType<{}> = styled.div`
+const Root = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-const Count: ComponentType<{}> = styled.p``;
+const Count = styled.p``;
 
-const ButtonContainer: ComponentType<{}> = styled.div`
+const ButtonContainer = styled.div`
   & > *:not(:first-child) {
     margin-left: 32px;
   }
 `;
 
-const IncrementButton: ComponentType<{}> = styled(Button).attrs({
+const IncrementButton = styled(Button).attrs({
   background: "#F44336"
 })``;
 
-const DecrementButton: ComponentType<{}> = styled(Button).attrs({
+const DecrementButton = styled(Button).attrs({
   background: "#3F51B5"
 })``;
 
@@ -52,8 +51,8 @@ class CounterPage extends Component<Props> {
 }
 
 export default connect(
-  (state: Object) => ({
+  (state: State) => ({
     counter: state.counter.counter
   }),
-  (dispatch: Dispatch<any>) => bindActionCreators(Actions, dispatch)
+  (dispatch: Dispatch) => bindActionCreators(Actions, dispatch)
 )(CounterPage);

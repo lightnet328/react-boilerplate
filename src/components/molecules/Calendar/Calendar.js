@@ -1,16 +1,15 @@
 // @flow
 import React, { Component } from "react";
-import type { ComponentType } from "react";
 import styled from "styled-components";
 import _ from "lodash";
 import Button from "components/atoms/Button";
 
-const Root: ComponentType<{}> = styled.div`
+const Root = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const Header: ComponentType<{}> = styled.div`
+const Header = styled.div`
   display: flex;
   text-align: center;
   justify-content: space-between;
@@ -18,20 +17,20 @@ const Header: ComponentType<{}> = styled.div`
   margin-bottom: 16px;
 `;
 
-const Content: ComponentType<{}> = styled.div`
+const Content = styled.div`
   display: flex;
   flex-direction: column;
   min-height: ${42 * 6}px;
 `;
 
-const WeekCell: ComponentType<{}> = styled.div`
+const WeekCell = styled.div`
   display: flex;
   &:first-child {
     justify-content: flex-end;
   }
 `;
 
-const DateCell: ComponentType<{}> = styled.div`
+const DateCell = styled.div`
   width: 32px;
   height: 32px;
   line-height: 32px;

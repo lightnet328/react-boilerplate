@@ -1,13 +1,12 @@
 // @flow
 import React, { Component } from "react";
-import type { ComponentType } from "react";
 import { bindActionCreators } from "redux";
-import type { Dispatch } from "redux";
 import { connect } from "react-redux";
 import styled, { keyframes } from "styled-components";
-import Logo from "assets/images/react-logo.svg";
+import Logo from "components/atoms/Logo";
+import type { State, Dispatch } from "types";
 
-const Root: ComponentType<{}> = styled.div``;
+const Root = styled.div``;
 
 const rotate360 = keyframes`
   from {
@@ -41,7 +40,4 @@ class Home extends Component<{}> {
   }
 }
 
-export default connect(
-  (state: Object) => ({}),
-  (dispatch: Dispatch<any>) => ({})
-)(Home);
+export default connect()(Home);

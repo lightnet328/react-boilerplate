@@ -1,10 +1,9 @@
 // @flow
 import React, { Component } from "react";
-import type { ComponentType } from "react";
 import styled from "styled-components";
 import chroma from "chroma-js";
 
-const Root: ComponentType<Props> = styled.button`
+const Root = styled.button`
   min-width: 64px;
   height: 32px;
   line-height: 32px;
@@ -15,11 +14,11 @@ const Root: ComponentType<Props> = styled.button`
   outline: none;
   padding: 0 16px;
   text-align: center;
-  color: ${({ color }) => color};
-  background: ${({ background }) => background};
+  color: ${({ color }: Props) => color};
+  background: ${({ background }: Props) => background};
   cursor: pointer;
   &:hover {
-    background: ${({ background }) =>
+    background: ${({ background }: Props) =>
       chroma(background)
         .darken()
         .hex()};

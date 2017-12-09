@@ -1,10 +1,9 @@
 // @flow
 import React, { Component } from "react";
-import type { ComponentType } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const Root: ComponentType<{}> = styled.div`
+const Root = styled.div`
   display: flex;
   & > a {
     display: flex;

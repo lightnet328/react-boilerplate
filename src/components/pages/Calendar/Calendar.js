@@ -1,15 +1,15 @@
 // @flow
 import React, { Component } from "react";
-import type { ComponentType } from "react";
 import { bindActionCreators } from "redux";
-import type { Dispatch } from "redux";
 import { connect } from "react-redux";
+import type { Connector } from "react-redux";
 import styled from "styled-components";
 import Button from "components/atoms/Button";
 import Calendar from "components/molecules/Calendar";
 import Actions from "actions/calendar";
+import type { State, Dispatch } from "types";
 
-const Root: ComponentType<{}> = styled.div``;
+const Root = styled.div``;
 
 type Props = {
   year: number,
@@ -35,10 +35,12 @@ class CalendarPage extends Component<Props> {
   }
 }
 
-export default connect(
-  (state: Object) => ({
+const connector: Connector<{}, Props> = connect(
+  (state: State) => ({
     year: state.calendar.getYear(),
     month: state.calendar.getMonth()
   }),
-  (dispatch: Dispatch<any>) => bindActionCreators(Actions, dispatch)
-)(CalendarPage);
+  (dispatch: Dispatch) => bindActionCreators(Actions, dispatch)
+);
+
+export default connector(CalendarPage);

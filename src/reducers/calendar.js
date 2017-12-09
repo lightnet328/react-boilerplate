@@ -3,12 +3,12 @@ import { handleActions } from "redux-actions";
 import Actions from "actions/calendar";
 import Calendar from "models/Calendar";
 
-const defaultState = new Calendar();
+const defaultState: Calendar = new Calendar();
 
 export default handleActions(
   {
-    [Actions.prevMonth]: state => state.prevMonth(),
-    [Actions.nextMonth]: state => state.nextMonth()
+    [Actions.prevMonth]: (state: Calendar) => state.prevMonth(),
+    [Actions.nextMonth]: (state: Calendar) => state.nextMonth()
   },
   defaultState
 );
