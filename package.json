@@ -4,7 +4,9 @@
   "main": "src/index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
+    "build:clean": "rimraf dist",
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "prebuild": "npm run build:clean",
     "flow:coverage": "flow-coverage-report -i 'src/**/*.js'"
   },
   "author": "lightnet328 <lightnet328@gmail.com>",
