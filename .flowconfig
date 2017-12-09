@@ -1,4 +1,6 @@
 [ignore]
+.*/node_modules/styled-components/.*
+.*/node_modules/flow-coverage-report/.*
 
 [include]
 
