@@ -8,6 +8,7 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "lint": "cross-env NODE_ENV=development eslint 'src/**/*.js'",
     "prebuild": "npm run build:clean",
+    "format": "prettier --write 'src/**/*.js'",
     "flow:coverage": "flow-coverage-report -i 'src/**/*.js'"
   },
   "author": "lightnet328 <lightnet328@gmail.com>",
