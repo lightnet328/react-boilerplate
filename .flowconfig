@@ -3,7 +3,6 @@
 [include]
 
 [libs]
-./node_modules/immutable/dist/immutable.js.flow
 
 [lints]
 
