@@ -6,6 +6,7 @@
     "build": "cross-env NODE_ENV=production webpack",
     "build:clean": "rimraf dist",
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "lint": "cross-env NODE_ENV=development eslint 'src/**/*.js'",
     "prebuild": "npm run build:clean",
     "flow:coverage": "flow-coverage-report -i 'src/**/*.js'"
   },
