@@ -1,12 +1,18 @@
 {
-  "presets": ["react-app"],
+  "presets": [
+    ["env", { "targets": { "ie": 9 }, "useBuiltIns": false, "modules": false }],
+    "react"
+  ],
   "plugins": [
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    "transform-runtime",
     "styled-components",
-    [
-      "module-resolver",
-      {
-        "root": ["./src"]
-      }
-    ]
-  ]
+    ["module-resolver", { "root": ["./src"] }]
+  ],
+  "env": {
+    "development": {
+      "plugins": ["transform-react-jsx-source", "transform-react-jsx-self"]
+    }
+  }
 }
